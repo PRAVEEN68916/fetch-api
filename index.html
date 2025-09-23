@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jokes box</title>
+</head>
+<style>
+    table,
+    td,
+    th {
+        border: 1px solid black;
+        border-collapse: collapse;
+        backdrop-filter: blur(25px);
+        background: transparent;
+        color: black;
+        font-weight: bold;
+        margin-top: 25px;
+        margin-left: 45px;
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    body{
+        background-color: dimgray;
+        background-image: url(https://a.storyblok.com/f/191576/1024x768/6a3f2986a8/02_cartoon.webp);
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        width: 99%;
+        height: 95vh;
+    }
+    
+    #tab{
+        width: 85%;
+        height: 75vh;
+        margin-left: 70px;
+    }
+
+    h1 {
+        text-align: center;
+        color:black;
+        font-weight: bold;
+    }
+    u{
+        color: white;
+    }
+</style>
+
+<body>
+    <div class="jan">
+    <u><h1><b> &#128514 Jokes Box 💕🤞<b></h1></u>
+    <table id="tab">
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Setup</th>
+                <th>Punchline</th>
+                <th>Id</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const indurl = "https://api.allorigins.win/raw?url=https://official-joke-api.appspot.com/jokes/ten";
+            fetch(indurl)
+                .then((res) => res.json())
+                .then((data) => {
+                    let rows = ""
+                    data.forEach((joke) => {
+                        rows += `
+                        <tr>
+                            <td>${joke.type}</td>
+                            <td>${joke.setup}</td>
+                            <td>${joke.punchline}</td>
+                            <td>${joke.id}</td>
+                        </tr>`
+                    });
+                    document.querySelector("tbody").innerHTML = rows;
+
+                });
+        });
+
+    </script>
+</body>
+
+</html>
