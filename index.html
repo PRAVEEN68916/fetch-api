@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>jokes box</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <style>
     table,
@@ -21,11 +23,12 @@
         padding: 15px;
         border-radius: 10px;
     }
-    th{
+
+    th {
         border: 3px solid black;
     }
 
-    body{
+    body {
         background-color: dimgray;
         background-image: url(https://a.storyblok.com/f/191576/1024x768/6a3f2986a8/02_cartoon.webp);
         background-size: cover;
@@ -34,8 +37,8 @@
         width: 99%;
         height: 95vh;
     }
-    
-    #tab{
+
+    #tab {
         width: 85%;
         height: 75vh;
         margin-left: 70px;
@@ -43,28 +46,33 @@
 
     h1 {
         text-align: center;
-        color:black;
+        color: black;
         font-weight: bold;
     }
-    u{
-        color: white;
-    }
+
+    /* td,
+    th:hover {
+        cursor: default;
+        transition: background-color 0.2s ease;
+
+
+    } */
 </style>
 
 <body>
     <div class="jan">
-    <u><h1><b> &#128514 Jokes Box 💕🤞<b></h1></u>
-    <table id="tab">
-        <thead>
-            <tr>
-                <th  scope="col">Type</th>
-                <th  scope="col">Setup</th>
-                <th  scope="col">Punchline</th>
-                <th  scope="col">Id</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
+        <h1><b> &#128514 Jokes Box 💕🤞<b></h1>
+        <table id="tab" class="table table-hover border-4 border-dark">
+            <thead class="border border-4 border-dark">
+                <tr>
+                    <th>Type</th>
+                    <th>Setup</th>
+                    <th>Punchline</th>
+                    <th>Id</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
     </div>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
